@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: n8n-ingress
+  namespace: n8n
+  labels:
+    app.kubernetes.io/name: 'n8n'
+    app.kubernetes.io/env: 'dev'
+    app.kubernetes.io/version: 'latest'
+    app.kubernetes.io/part-of: 'n8n'
+  annotations:
+    # cert-manager.io/cluster-issuer: letsencrypt-prod
+    # cert-manager.io/revision-history-limit: "3"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: "nginx"
+  rules:
+  - host: n8n.ginga.tech
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: n8n-service
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - n8n.ginga.tech
+    secretName: n8n.ginga.tech-tls
+status:
+  loadBalancer:
+    ingress:
+    - hostname: 172.23.0.33
+      ip: 172.23.0.33
+
