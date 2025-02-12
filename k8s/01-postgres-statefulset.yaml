@@ -94,7 +94,7 @@ spec:
   - metadata:
       name: postgres-data
     spec:
-      storageClassName: local-path
+      storageClassName: standard
       accessModes:
       - ReadWriteOnce
       resources:
