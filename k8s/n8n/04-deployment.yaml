@@ -33,27 +33,27 @@ spec:
           containerPort: 5678
         envFrom:
         - configMapRef:
-            name: n8n-configmap
+            name: n8n-configmap-deployment
         env:
         - name: DB_POSTGRESDB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: n8n-deployment-secrets
+              name: n8n-secrets-deployment
               key: DB_POSTGRESDB_PASSWORD
         - name: N8N_BASIC_AUTH_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: n8n-deployment-secrets
+              name: n8n-secrets-deployment
               key: N8N_BASIC_AUTH_PASSWORD
         - name: N8N_ENCRYPTION_KEY
           valueFrom:
             secretKeyRef:
-              name: n8n-deployment-secrets
+              name: n8n-secrets-deployment
               key: N8N_ENCRYPTION_KEY
         - name: N8N_SECURE_COOKIE
           valueFrom:
             secretKeyRef:
-              name: n8n-deployment-secrets
+              name: n8n-secrets-deployment
               key: N8N_SECURE_COOKIE
         resources:
           limits:

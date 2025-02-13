@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: n8n-configmap
+  name: n8n-configmap-deployment
   namespace: n8n 
   labels:
     app.kubernetes.io/name: 'n8n'
@@ -17,5 +17,5 @@ data:
   DB_TYPE: "postgresdb"
   DB_POSTGRESDB_USER: "n8n"
   DB_POSTGRESDB_DATABASE: "n8n"
-  DB_POSTGRESDB_HOST: "n8n-postgres.n8n.svc.cluster.local"
+  DB_POSTGRESDB_HOST: "n8n-postgres-service.n8n.svc.cluster.local"
   DB_POSTGRESDB_PORT: "5432"

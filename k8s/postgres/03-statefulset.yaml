@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: n8n-postgres
+  name: n8n-postgres-statefulset
   namespace: n8n
   labels:
     app.kubernetes.io/name: 'postgres'
