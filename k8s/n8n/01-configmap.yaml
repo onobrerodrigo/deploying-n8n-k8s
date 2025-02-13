@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: n8n-configmap
+  namespace: n8n 
+  labels:
+    app.kubernetes.io/name: 'n8n'
+    app.kubernetes.io/env: 'dev'
+    app.kubernetes.io/version: 'latest'
+    app.kubernetes.io/part-of: 'n8n'
+    component: configmap
+data:
+  NODE_ENV: "production"
+  GENERIC_TIMEZONE: "America/Recife"
+  WEBHOOK_TUNNEL_URL: "http://n8n.ginga.io/" 
+  # Database configurations
+  DB_TYPE: "postgresdb"
+  DB_POSTGRESDB_USER: "n8n"
+  DB_POSTGRESDB_DATABASE: "n8n"
+  DB_POSTGRESDB_HOST: "n8n-postgres.n8n.svc.cluster.local"
+  DB_POSTGRESDB_PORT: "5432"

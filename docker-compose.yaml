@@ -43,11 +43,11 @@ services:
       - traefik.http.middlewares.n8n.headers.STSPreload=true
       - traefik.http.routers.n8n.middlewares=n8n@docker
     environment:
-      - N8N_HOST=${SUBDOMAIN}.${DOMAIN_NAME}
+      - N8N_HOST=${SUBDOMAIN}.${DOMAIN_NAME} # As variáveis estão declaradas no arquivo .env-sample.
       - N8N_PORT=5678
       - N8N_PROTOCOL=http
       - NODE_ENV=production
-      - WEBHOOK_URL=http://${SUBDOMAIN}.${DOMAIN_NAME}/
+      - WEBHOOK_URL=http://${SUBDOMAIN}.${DOMAIN_NAME}/ # Definido HTTP para validar localmente. Em ambiente de produção, usar HTTPS.
       - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
     volumes:
       - n8n_data:/home/node/.n8n
