@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: n8n-postgres-statefulset
+  name: n8n-statefulset-postgres
   namespace: n8n
   labels:
     app.kubernetes.io/name: 'postgres'
@@ -37,17 +37,17 @@ spec:
         - name: POSTGRES_DB
           valueFrom:
             secretKeyRef:
-              name: n8n-postgres-secret
+              name: n8n-secret-postgres
               key: POSTGRES_DB
         - name: POSTGRES_USER
           valueFrom:
             secretKeyRef:
-              name: n8n-postgres-secret
+              name: n8n-secret-postgres
               key: POSTGRES_USER
         - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: n8n-postgres-secret
+              name: n8n-secret-postgres
               key: POSTGRES_PASSWORD
         volumeMounts:
         - name: postgres-data
