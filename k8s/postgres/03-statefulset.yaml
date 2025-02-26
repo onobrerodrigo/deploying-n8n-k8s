@@ -1,3 +1,6 @@
+# IMPORTANTE: a maioria das variáveis ​​de ambiente usadas pelo aplicativo vêm de
+# um serviço externo Infisical (https://app.infisical.com)
+
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -33,22 +36,9 @@ spec:
         - name: postgres-port
           containerPort: 5432
           protocol: TCP
-        env:
-        - name: POSTGRES_DB
-          valueFrom:
-            secretKeyRef:
-              name: n8n-secret-postgres
-              key: POSTGRES_DB
-        - name: POSTGRES_USER
-          valueFrom:
-            secretKeyRef:
-              name: n8n-secret-postgres
-              key: POSTGRES_USER
-        - name: POSTGRES_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: n8n-secret-postgres
-              key: POSTGRES_PASSWORD
+        envFrom:
+        - secretRef:
+            name: n8n-infisical-postgres
         volumeMounts:
         - name: postgres-data
           mountPath: /var/lib/postgresql/data
