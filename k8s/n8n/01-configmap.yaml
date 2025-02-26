@@ -8,11 +8,10 @@ metadata:
     app.kubernetes.io/env: 'dev'
     app.kubernetes.io/version: 'latest'
     app.kubernetes.io/part-of: 'n8n'
-    component: configmap
 data:
   NODE_ENV: "production"
   GENERIC_TIMEZONE: "America/Recife"
-  WEBHOOK_TUNNEL_URL: "http://n8n.ginga.io/" 
+  WEBHOOK_TUNNEL_URL: "http://n8n.baiaode2.io/" 
   # Database configurations
   DB_TYPE: "postgresdb"
   DB_POSTGRESDB_USER: "n8n"
