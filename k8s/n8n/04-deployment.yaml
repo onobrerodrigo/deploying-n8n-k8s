@@ -1,3 +1,6 @@
+# IMPORTANTE: a maioria das variáveis ​​de ambiente usadas pelo aplicativo vêm de
+# um serviço externo Infisical (https://app.infisical.com)
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
