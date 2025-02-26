@@ -21,6 +21,6 @@ spec:
         path: /
         backend:
           service:
-            name: n8n-service
+            name: n8n-service-deployment
             port:
               number: 80
