@@ -1,2 +1,4 @@
 .env
 .infisical.json
+*.pem
+*.sql

@@ -14,7 +14,7 @@ metadata:
 spec:
   ingressClassName: "nginx"
   rules:
-  - host: n8n.ginga.io
+  - host: n8n.ginga.dev.br
     http:
       paths:
       - pathType: Prefix
@@ -27,4 +27,4 @@ spec:
   tls:
   - hosts:
     - n8n.ginga.io
-    secretName: n8n-ginga-io-tls
+    secretName: n8n-ginga-dev-br-tls
