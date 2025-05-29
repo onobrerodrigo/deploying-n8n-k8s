@@ -1,0 +1,29 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: n8n-gateway
+  namespace: n8n
+  labels:
+    app.kubernetes.io/name: 'n8n'
+    app.kubernetes.io/env: 'dev'
+    app.kubernetes.io/version: 'latest'
+    app.kubernetes.io/part-of: 'n8n'
+spec:
+  selector:
+    istio: ingressgateway  # Usa o Istio default ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "n8n.ginga.dev.br"
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    hosts:
+    - "n8n.ginga.dev.br"
+    tls:
+      mode: SIMPLE
+      credentialName: n8n-ginga-dev-br-tls  # nome do Secret TLS no namespace do *ingressgateway*
