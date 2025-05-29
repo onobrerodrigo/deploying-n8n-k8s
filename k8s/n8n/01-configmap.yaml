@@ -11,7 +11,8 @@ metadata:
 data:
   NODE_ENV: "production"
   GENERIC_TIMEZONE: "America/Recife"
-  WEBHOOK_TUNNEL_URL: "http://n8n.ginga.dev.br/" 
+  WEBHOOK_TUNNEL_URL: "https://n8n.ginga.dev.br/" 
+  WEBHOOK_URL: "https://n8n.ginga.dev.br/" 
   # Database configurations
   DB_TYPE: "postgresdb"
   DB_POSTGRESDB_USER: "n8n"
