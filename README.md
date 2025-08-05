@@ -11,7 +11,7 @@ Este repositório contém os manifestos necessários para provisionar a aplicaç
 - Secret e ConfigMap já definidos para as configurações de ambiente e banco de dados.
 - Um PersistentVolume disponível para o StatefulSet do PostgreSQL, caso deseje persistência de dados.
 
-### Observações
+### Observações importantes
 
 - Certifique-se de que todos os Secrets e ConfigMaps estão corretamente criados no namespace n8n antes de aplicar o StatefulSet e o Deployment.
 - Ajuste o storageClassName e as configurações de resources conforme a política de armazenamento e os recursos disponíveis no seu cluster Kubernetes.
